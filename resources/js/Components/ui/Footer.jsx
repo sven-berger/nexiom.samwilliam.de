@@ -1,16 +1,16 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 export default function Footer() {
-    const [time, setTime] = useState("");
-    const [weekday, setWeekday] = useState("");
-    const [date, setDate] = useState("");
+    const [time, setTime] = useState('');
+    const [weekday, setWeekday] = useState('');
+    const [date, setDate] = useState('');
 
     useEffect(() => {
         const update = () => {
             const now = new Date();
-            setWeekday(now.toLocaleDateString("de-DE", { weekday: "long" }));
-            setTime(now.toLocaleTimeString("de-DE") + " Uhr");
-            setDate(now.toLocaleDateString("de-DE"));
+            setWeekday(now.toLocaleDateString('de-DE', { weekday: 'long' }));
+            setTime(now.toLocaleTimeString('de-DE') + ' Uhr');
+            setDate(now.toLocaleDateString('de-DE'));
         };
         update();
         const interval = setInterval(update, 1000);
@@ -18,10 +18,12 @@ export default function Footer() {
     }, []);
 
     return (
-        <footer className="text-slate-500 border border-slate-300 bg-white shadow-md rounded-2xl p-4 mt-4 text-xs sm:text-sm">
+        <footer className="text-slate-500 border border-slate-300 bg-white rounded-2xl p-4 mt-4 text-xs sm:text-sm">
             <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-2 items-center">
                 <div className="hidden lg:block">
-                    {weekday}, {time}<br />{date}
+                    {weekday}, {time}
+                    <br />
+                    {date}
                 </div>
 
                 <div className="text-center">
@@ -31,10 +33,21 @@ export default function Footer() {
 
                 <div className="flex items-center justify-center lg:justify-end mt-2 lg:mt-0">
                     <div className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 lg:justify-end">
-                        <a href="https://kyrex.de" className="hover:text-slate-700">Impressum</a> •
-                        <a href="https://kyrex.de/wissensportal" className="hover:text-slate-700">Datenschutzerklärung</a> •
-                        <a href="https://kyrex.de/dummy-page" className="hover:text-slate-700">Kontakt</a> •
-                        <a href="https://kyrex.de" className="hover:text-slate-700">Nutzungsbedingungen</a>
+                        <a href="https://kyrex.de" className="hover:text-slate-700">
+                            Impressum
+                        </a>{' '}
+                        •
+                        <a href="https://kyrex.de/wissensportal" className="hover:text-slate-700">
+                            Datenschutzerklärung
+                        </a>{' '}
+                        •
+                        <a href="https://kyrex.de/dummy-page" className="hover:text-slate-700">
+                            Kontakt
+                        </a>{' '}
+                        •
+                        <a href="https://kyrex.de" className="hover:text-slate-700">
+                            Nutzungsbedingungen
+                        </a>
                     </div>
                 </div>
             </div>
