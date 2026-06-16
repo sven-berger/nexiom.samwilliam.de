@@ -8,5 +8,5 @@ const colsMap = {
 };
 
 export default function GridLayout({ cols = 2, children }) {
-    return <div className={`grid gap-2.5 ${colsMap[cols]}`}>{children}</div>;
+    return <div className={`grid gap-2.5 items-stretch ${colsMap[cols]}`}>{children}</div>;
 }
