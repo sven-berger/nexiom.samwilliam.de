@@ -15,16 +15,16 @@ export default function Nav() {
                 |
                 <li>
                     <Link
-                        href="/blog"
+                        href="/cv/"
                         className="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
                     >
-                        Blog
+                        Lebenslauf
                     </Link>
                 </li>{' '}
                 |
                 <li>
                     <Link
-                        href="/contact"
+                        href="/games/"
                         className="px-3 py-1.5 rounded-lg text-sm font-medium text-slate-600 hover:bg-slate-100 hover:text-slate-900 transition-colors"
                     >
                         Meine Spiele bei IGDB
