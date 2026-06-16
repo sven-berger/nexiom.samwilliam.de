@@ -1,5 +1,5 @@
-import Box from '../../Box';
-import Button from '../../Button';
+import Box from '../Box';
+import Button from '../Button';
 import { useState } from 'react';
 
 export default function Counter() {
@@ -22,7 +22,7 @@ export default function Counter() {
     };
 
     return (
-        <Box title="Zähler">
+        <Box title="Counter" grow>
             <div className="w-full rounded-2xl border border-slate-300 bg-slate-100 p-4 text-center text-xl font-bold">
                 {count}
             </div>
