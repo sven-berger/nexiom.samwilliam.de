@@ -30,7 +30,7 @@ export default function CVMainPage() {
                 className="mt-5"
                 to={'/cv/'}
                 variant="secondary"
-                label="Zum kompletten Lebenslauf"
+                label="Zum kompletten Lebenslauf 2"
             />
         </>
     );
