@@ -17,27 +17,17 @@ export default function AboutMe() {
             <MyProfile
                 name="Sven Berger"
                 age={age}
-                mail="bergersvenoliver@gmail.com"
+                mail="Schreib mir eine E-Mail"
                 phone={15119409788}
                 status="Praktikum beendet"
                 location="Idstein"
                 company="WolkenWerk GmbH"
-                shortInfo={
-                    <>
-                        <p className="mb-3">
-                            Meine Begeisterung für die IT wurde früh durch meinen Vater, einen
-                            Senior System Manager, geweckt. Auch während meiner beruflichen
-                            Stationen außerhalb der IT hat mich das Thema nie losgelassen – weshalb
-                            ich nun bewusst den Weg in die Anwendungsentwicklung gehe.
-                        </p>
-                        <Button
-                            label="Mehr erfahren"
-                            variant="secondary"
-                            onClick={() => alert('Mehr erfahren')}
-                            className="w-full"
-                        />
-                    </>
-                }
+            />
+            <Button
+                label="Mehr erfahren"
+                variant="secondary"
+                onClick={() => alert('Mehr erfahren')}
+                className="mt-5 w-full"
             />
         </Box>
     );

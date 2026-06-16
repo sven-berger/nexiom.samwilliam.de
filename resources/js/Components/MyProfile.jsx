@@ -1,51 +1,38 @@
-export default function MyProfile({
-    name,
-    age,
-    mail,
-    phone,
-    status,
-    location,
-    company,
-    shortInfo,
-}) {
+import HR_Center from './HR_Center';
+
+export default function MyProfile({ name, age, mail, phone, status, location, company }) {
     return (
         <>
             <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 mb-3">
                 <dt className="text-gray-500">Name:</dt>
-                <dd className="font-medium text-gray-500">{name}</dd>
+                <dd className="font-medium text-gray-500 text-right">{name}</dd>
 
                 <dt className="text-gray-500">Alter:</dt>
-                <dd className="font-medium text-gray-500">
+                <dd className="font-medium text-gray-500 text-right">
                     {age} (<small>Das Datum wird automatisch berechnet</small>)
                 </dd>
 
                 <dt className="text-gray-500">Wohnort:</dt>
-                <dd className="font-medium text-gray-500">{location}</dd>
+                <dd className="font-medium text-gray-500 text-right">{location}</dd>
 
                 <dt className="text-gray-500">E-Mail:</dt>
-                <dd className="font-medium text-gray-500">
-                    <span className="text-sm">
+                <dd className="font-medium text-gray-500 text-right">
+                    <span>
                         <a href={`mailto:${mail}`}>{mail}</a>
                     </span>
                 </dd>
                 <dt className="text-gray-500">Handynummer:</dt>
-                <dd className="font-medium text-gray-500">+49 {phone}</dd>
+                <dd className="font-medium text-gray-500 text-right">+49 {phone}</dd>
             </dl>
 
-            <hr className="border-slate-400 my-5" />
+            <HR_Center />
 
             <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 mb-3">
                 <dt className="text-gray-500">Betrieb:</dt>
-                <dd className="font-medium text-gray-500">{company}</dd>
+                <dd className="font-medium text-gray-500 text-right">{company}</dd>
 
                 <dt className="text-gray-500">Status:</dt>
-                <dd className="font-medium text-gray-500">{status}</dd>
-            </dl>
-
-            <hr className="border-slate-400 my-5" />
-
-            <dl className="block grid-cols-[auto_1fr] gap-x-6 gap-y-2 mb-3">
-                <dd className="font-medium text-gray-500">{shortInfo}</dd>
+                <dd className="font-medium text-gray-500 text-right">{status}</dd>
             </dl>
         </>
     );
