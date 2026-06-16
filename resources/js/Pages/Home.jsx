@@ -5,6 +5,8 @@ import GridColumn from '../Components/grid/GridColumn';
 import ThatsMeImage from '../Components/home/ThatsMeImage';
 import Counter from '../Components/home/Counter';
 import TechStack from '../Components/home/TechStack';
+import Card from '../Components/Cards';
+import ContentTitle from '../Components/ContentTitle';
 
 export default function Home() {
     return (
@@ -16,19 +18,35 @@ export default function Home() {
                     <Counter />
                 </GridColumn>
             </GridLayout>
-            <Box grow>
-                <div>
-                    Nexiom ist ein fiktives Unternehmen, das sich auf die Entwicklung von Software
-                    spezialisiert hat. Es wurde 2006 von Sven Oliver Berger gegründet und hat seinen
-                    Sitz in Idstein, Deutschland. Nexiom bietet eine Vielzahl von Dienstleistungen
-                    an, darunter Webentwicklung, App-Entwicklung, IT-Beratung und maßgeschneiderte
-                    Softwarelösungen für Unternehmen jeder Größe. Das Unternehmen legt großen Wert
-                    auf Qualität, Innovation und Kundenzufriedenheit und hat sich einen Ruf als
-                    zuverlässiger Partner in der IT-Branche erarbeitet. Mit einem engagierten Team
-                    von Fachleuten und einer Leidenschaft für Technologie strebt Nexiom danach, die
-                    digitale Landschaft zu gestalten und seinen Kunden zum Erfolg zu verhelfen.
-                </div>
-            </Box>
+            <ContentTitle title="Meine Kenntnisse" />
+            <GridLayout cols={5}>
+                <Card
+                    title="Laravel"
+                    description="Hier findest du meinen Blog, in dem ich über meine Erfahrungen in der IT-Welt berichte. Von Projekten bis hin zu Tipps und Tricks – alles rund um die IT."
+                    image="/images/knowledge/laravel.webp"
+                />
+                <Card
+                    title="React"
+                    description="Hier findest du meinen Blog, in dem ich über meine Erfahrungen in der IT-Welt berichte. Von Projekten bis hin zu Tipps und Tricks – alles rund um die IT."
+                    image="/images/knowledge/react.webp"
+                />
+                <Card
+                    title="Tailwind CSS"
+                    description="Hier findest du eine Übersicht meiner Projekte, an denen ich gearbeitet habe. Von Webanwendungen bis hin zu Open-Source-Beiträgen – entdecke meine Arbeit und meine Fähigkeiten."
+                    image="/images/knowledge/tailwindcss.webp"
+                />
+                <Card
+                    title="GitHub"
+                    description="Hier findest du Möglichkeiten, mit mir in Kontakt zu treten. Ob per E-Mail oder über soziale Medien – ich freue mich darauf, von dir zu hören!"
+                    image="/images/knowledge/git.webp"
+                />
+                <Card
+                    title="Ausbildung"
+                    description="Hier findest du Möglichkeiten, mit mir in Kontakt zu treten. Ob per E-Mail oder über soziale Medien – ich freue mich darauf, von dir zu hören!"
+                    image="/images/knowledge/general.png"
+                    link="/cv/"
+                />
+            </GridLayout>
         </Page>
     );
 }
