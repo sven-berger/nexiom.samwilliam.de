@@ -41,16 +41,15 @@ export default function TechStack() {
                         </li>
                     ) : null,
                 )}
-                <p className="mt-4">
-                    {NICE.map((name) =>
-                        deps[name] ? (
-                            <li key={name} className="flex justify-between">
-                                <span className="font-medium text-slate-800">{name}</span>
-                                <span className="text-slate-500 text-sm">{deps[name]}</span>
-                            </li>
-                        ) : null,
-                    )}
-                </p>
+
+                {NICE.map((name) =>
+                    deps[name] ? (
+                        <li key={name} className="flex justify-between">
+                            <span className="font-medium text-slate-800">{name}</span>
+                            <span className="text-slate-500 text-sm">{deps[name]}</span>
+                        </li>
+                    ) : null,
+                )}
             </ul>
         </Box>
     );
