@@ -1,9 +1,16 @@
-export default function Box({ title, children, className = '', grow = false, noPadding = false, noFlex = false }) {
+export default function Box({
+    title,
+    children,
+    className = '',
+    grow = false,
+    noPadding = false,
+    noFlex = false,
+}) {
     if (!title) {
         return (
             <div className={`${grow ? 'grow ' : ''}rounded-2xl mb-3`}>
                 <div
-                    className={`text-slate-700 border-2 border-slate-300 bg-white rounded-2xl ${noPadding ? `${noFlex ? '' : 'flex flex-col '}overflow-hidden` : 'h-full my-3 p-4 space-y-2'} ${className}`}
+                    className={`text-slate-700 border-2 border-slate-300 bg-white rounded-2xl transition-shadow duration-300 hover:shadow-md ${noPadding ? `${noFlex ? '' : 'flex flex-col '}overflow-hidden` : 'h-full my-3 p-4 space-y-2'} ${className}`}
                 >
                     {children}
                 </div>
@@ -16,7 +23,7 @@ export default function Box({ title, children, className = '', grow = false, noP
                     {title}
                 </h3>
                 <div
-                    className={`flex-1 text-slate-700 border-t border border-slate-300 bg-white rounded-b-2xl overflow-hidden ${noPadding ? '' : 'p-5 space-y-2'} ${className}`}
+                    className={`flex-1 text-slate-700 border-t border border-slate-300 bg-white rounded-b-2xl overflow-hidden transition-shadow duration-300 hover:shadow-md ${noPadding ? '' : 'p-5 space-y-2'} ${className}`}
                 >
                     {children}
                 </div>
