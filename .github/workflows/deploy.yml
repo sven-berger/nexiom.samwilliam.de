@@ -17,7 +17,7 @@ jobs:
                   key: ${{ secrets.SSH_PRIVATE_KEY }}
                   port: 22
                   script: |
-                      cd /var/projects/nexiom.samwilliam.de
+                      cd /var/projects/riftcore.de/
                       git pull origin main
 
                       composer install --no-dev --optimize-autoloader
@@ -30,4 +30,4 @@ jobs:
                       php artisan optimize
                       php artisan storage:link
 
-                      chown -R www-data:www-data /var/projects/nexiom.samwilliam.de
+                      chown -R www-data:www-data /var/projects/riftcore.de/
