@@ -3,7 +3,7 @@ import Button from '../../Button';
 
 export default function LoginForm() {
     return (
-        <Box title="Anmeldung">
+        <Box title="Anmeldung" className="mt-0" grow>
             <form className="space-y-4">
                 <div>
                     <input

@@ -23,7 +23,3 @@ Route::get('/dashboard/', function () {
 Route::get('/cv/', function () {
     return Inertia::render('CV');
 });
-
-Route::get('/cv/complete/', function () {
-    return Inertia::render('CVComplete');
-});

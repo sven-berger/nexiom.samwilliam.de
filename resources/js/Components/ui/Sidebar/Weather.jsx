@@ -43,7 +43,7 @@ export default function Weather() {
         : null;
 
     return (
-        <Box title="Wetter in Idstein">
+        <Box title="Wetter in Idstein" grow>
             {error && (
                 <p className="text-sm text-red-500">Wetterdaten konnten nicht geladen werden.</p>
             )}

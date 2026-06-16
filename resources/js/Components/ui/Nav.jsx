@@ -3,7 +3,9 @@ import { Link } from '@inertiajs/react';
 
 const links = [
     { href: '/', label: 'Startseite' },
-    { href: '/cv/', label: 'Lebenslauf' },
+    { href: '#lebenslauf', label: 'Lebenslauf' },
+    { href: '#interessen', label: 'Interessen' },
+
     { href: '/games/', label: 'Meine Spiele bei IGDB' },
 ];
 

@@ -12,13 +12,16 @@ export default function Button({
     variant = 'primary',
     className = '',
     type = 'button',
+    target = true,
     onClick,
 }) {
     const baseStyle = `text-white text-center rounded-2xl p-4 ${variants[variant] ?? variants.primary} ${className}`;
+    const linkTarget = target === false ? undefined : target === true ? '_blank' : target;
+    const linkRel = linkTarget === '_blank' ? 'noopener noreferrer' : undefined;
 
     if (to) {
         return (
-            <a href={to} className={`block ${baseStyle}`}>
+            <a href={to} className={`block ${baseStyle}`} target={linkTarget} rel={linkRel}>
                 {label ?? 'Button-Verlinkung'}
             </a>
         );

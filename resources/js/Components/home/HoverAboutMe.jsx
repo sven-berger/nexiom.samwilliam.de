@@ -1,6 +1,6 @@
 export default function HoverAboutMe() {
     return (
-        <div>
+        <div className="absolute inset-0 flex flex-col items-start justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500 p-6 text-left">
             <p className="text-white text-lg font-semibold drop-shadow">Sven Berger</p>
             <p className="text-white/80 text-sm mt-1 drop-shadow">
                 Fachinformatiker für Anwendungsentwicklung Lorem100 ipsum dolor sit amet,
