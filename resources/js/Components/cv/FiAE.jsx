@@ -8,9 +8,10 @@ export default function FiAE() {
             <div className="lg:flex gap-8">
                 <div className="flex-1">
                     <div className="flex items-center justify-between mt-3 mb-5">
-                        <div className="text-xl font-bold">
+                        <div className="text-xl font-bold hidden lg:block">
                             Fachinformatiker für Anwendungsentwicklung
                         </div>
+                        <div className="text-xl font-bold lg:hidden">Fachinformatiker</div>
                         <div className="flex gap-2">
                             <Label variant="success" label="Abgeschlossen" />
                             <Label variant="secondary" label="Umschulung" />
