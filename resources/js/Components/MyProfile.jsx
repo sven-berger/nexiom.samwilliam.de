@@ -9,7 +9,7 @@ export default function MyProfile({ name, age, mail, phone, status, location, co
 
                 <dt className="text-gray-500">Alter:</dt>
                 <dd className="font-medium text-gray-500 text-right">
-                    {age} (<small>Das Datum wird automatisch berechnet</small>)
+                    {age} Jahre<span className="text-gray-300 text-sm italic"> *</span>
                 </dd>
 
                 <dt className="text-gray-500">Wohnort:</dt>
@@ -25,8 +25,11 @@ export default function MyProfile({ name, age, mail, phone, status, location, co
                 <dd className="font-medium text-gray-500 text-right">+49 {phone}</dd>
             </dl>
 
-            <HR_Center />
+            <span className="flex justify-end text-gray-300 text-sm italic">
+                * Das Alter wird automatisch berechnet
+            </span>
 
+            <HR_Center />
             <dl className="grid grid-cols-[auto_1fr] gap-x-6 gap-y-2 mb-3">
                 <dt className="text-gray-500">Betrieb:</dt>
                 <dd className="font-medium text-gray-500 text-right">{company}</dd>
