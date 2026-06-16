@@ -20,7 +20,7 @@ export default function FiAE() {
 
                     <ContentHeader title="Bildungsträger" />
                     <div className="mb-3">
-                        <p>BoxGFN GmbH</p>
+                        <p>GFN GmbH</p>
                         <p>Maaßstraße 24</p>
                         <p>69123 Heidelberg</p>
 
