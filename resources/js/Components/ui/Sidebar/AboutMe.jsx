@@ -1,5 +1,6 @@
 import Box from '../../Box';
 import MyProfile from '../../MyProfile';
+import Button from '../../Button';
 
 export default function AboutMe() {
     const birthday = new Date(1991, 0, 21);
@@ -21,7 +22,22 @@ export default function AboutMe() {
                 status="Praktikum beendet"
                 location="Idstein"
                 company="WolkenWerk GmbH"
-                shortInfo="Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores alias mollitia nemo soluta, libero tempore veritatis numquam aliquam officiis? Doloribus."
+                shortInfo={
+                    <>
+                        <p className="mb-3">
+                            Meine Begeisterung für die IT wurde früh durch meinen Vater, einen
+                            Senior System Manager, geweckt. Auch während meiner beruflichen
+                            Stationen außerhalb der IT hat mich das Thema nie losgelassen – weshalb
+                            ich nun bewusst den Weg in die Anwendungsentwicklung gehe.
+                        </p>
+                        <Button
+                            label="Mehr erfahren"
+                            variant="secondary"
+                            onClick={() => alert('Mehr erfahren')}
+                            className="w-full"
+                        />
+                    </>
+                }
             />
         </Box>
     );

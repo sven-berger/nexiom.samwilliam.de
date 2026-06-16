@@ -45,7 +45,6 @@ export default function MyProfile({
             <hr className="border-slate-400 my-5" />
 
             <dl className="block grid-cols-[auto_1fr] gap-x-6 gap-y-2 mb-3">
-                <dt className="text-gray-500 mb-5">Über mich:</dt>
                 <dd className="font-medium text-gray-500">{shortInfo}</dd>
             </dl>
         </>
