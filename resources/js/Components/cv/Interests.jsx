@@ -6,7 +6,7 @@ export default function Interests() {
     return (
         <Box className="mb-5" title="Interessen">
             <div className="flex-1">
-                <ul className="list-disc list-inside text-sm text-slate-700">
+                <ul className="list-none list-inside text-sm text-slate-700">
                     <li className="mb-3">
                         <span className="font-bold">Kontinuierlicher Ausbau meiner Website</span>
                         <br />
