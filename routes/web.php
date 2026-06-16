@@ -20,8 +20,10 @@ Route::get('/dashboard/', function () {
     ]);
 });
 
-Route::get('/test/', function () {
-    return Inertia::render('Test', [
-        'name' => 'Sven',   // wird als Prop an React übergeben
-    ]);
+Route::get('/cv/', function () {
+    return Inertia::render('CV');
+});
+
+Route::get('/cv/complete/', function () {
+    return Inertia::render('CVComplete');
 });
