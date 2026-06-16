@@ -14,7 +14,7 @@ export default function TechStack() {
             <ul className="space-y-1">
                 {apacheVersion && (
                     <li className="flex justify-between">
-                        <span className="font-medium text-slate-800">Apache</span>
+                        <span className="font-medium text-slate-800">Webserver</span>
                         <span className="text-slate-500 text-sm">{apacheVersion}</span>
                     </li>
                 )}
