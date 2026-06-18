@@ -6,7 +6,7 @@ const links = [
     { href: '#lebenslauf', label: 'Lebenslauf' },
     { href: '#interessen', label: 'Interessen' },
 
-    { href: '/games/', label: 'Meine Spiele bei IGDB' },
+    { href: '#github', label: 'Meine GitHub-Projekte' },
 ];
 
 export default function Nav() {
