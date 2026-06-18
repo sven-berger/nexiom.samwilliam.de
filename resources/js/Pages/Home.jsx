@@ -46,6 +46,7 @@ export default function Home() {
             </section>
 
             <section id="github" className="scroll-mt-24">
+                <ContentTitle title="Meine GitHub Repositories" />
                 <MyGitHub />
             </section>
 

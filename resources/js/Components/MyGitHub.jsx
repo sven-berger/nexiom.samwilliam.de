@@ -28,53 +28,55 @@ export function GitHubCard({ repo }) {
     const latestCommitUrl = repo.latestCommit?.url ?? null;
 
     return (
-        <div className="flex h-full flex-col">
-            <article className="h-full rounded-t-2xl border border-slate-300 border-b-0 bg-white p-4 text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
-                <h3 className="text-lg font-semibold">{repo.name}</h3>
+        <>
+            <div className="flex h-full flex-col">
+                <article className="h-full rounded-t-2xl border border-slate-300 border-b-0 bg-white p-4 text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+                    <h3 className="text-lg font-semibold">{repo.name}</h3>
 
-                <p className="mt-2 text-sm">
-                    {repo.description ?? 'Keine Beschreibung vorhanden.'}
-                </p>
+                    <p className="mt-2 text-sm">
+                        {repo.description ?? 'Keine Beschreibung vorhanden.'}
+                    </p>
 
-                <div className="mt-4 text-sm">
-                    <p>Sprache: {repo.language ?? 'Nicht angegeben'}</p>
-                    <p>Aktualisiert: {new Date(repo.updated_at).toLocaleDateString('de-DE')}</p>
-                </div>
+                    <div className="mt-4 text-sm">
+                        <p>Sprache: {repo.language ?? 'Nicht angegeben'}</p>
+                        <p>Aktualisiert: {new Date(repo.updated_at).toLocaleDateString('de-DE')}</p>
+                    </div>
 
-                <div className="pt-3 text-sm">
-                    <ContentTitle title="Letzter Commit" />
-                    {latestCommitUrl ? (
-                        <a
-                            href={latestCommitUrl}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="mt-1 inline-block max-w-full truncate rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white hover:bg-green-700 hover:underline"
-                            title={latestCommitMessage}
-                        >
-                            {latestCommitMessage}
-                        </a>
-                    ) : (
-                        <p
-                            className="mt-1 inline-block max-w-full truncate rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white"
-                            title={latestCommitMessage}
-                        >
-                            {latestCommitMessage}
-                        </p>
-                    )}
-                    {latestCommitDate && (
-                        <p className="text-slate-500 italic">am {latestCommitDate}</p>
-                    )}
-                </div>
-            </article>
+                    <div className="pt-3 text-sm">
+                        <ContentTitle title="Letzter Commit" />
+                        {latestCommitUrl ? (
+                            <a
+                                href={latestCommitUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="mt-1 inline-block max-w-full truncate rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white hover:bg-green-700 hover:underline"
+                                title={latestCommitMessage}
+                            >
+                                {latestCommitMessage}
+                            </a>
+                        ) : (
+                            <p
+                                className="mt-1 inline-block max-w-full truncate rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white"
+                                title={latestCommitMessage}
+                            >
+                                {latestCommitMessage}
+                            </p>
+                        )}
+                        {latestCommitDate && (
+                            <p className="text-slate-500 italic">am {latestCommitDate}</p>
+                        )}
+                    </div>
+                </article>
 
-            <GitHubButton
-                label="Auf GitHub ansehen"
-                to={repo.html_url}
-                variant="secondary"
-                className="mt-auto w-full rounded-t-none rounded-b-2xl"
-                target
-            />
-        </div>
+                <GitHubButton
+                    label="Auf GitHub ansehen"
+                    to={repo.html_url}
+                    variant="secondary"
+                    className="mt-auto w-full rounded-t-none rounded-b-2xl"
+                    target
+                />
+            </div>
+        </>
     );
 }
 
