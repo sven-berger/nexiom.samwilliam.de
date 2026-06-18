@@ -17,8 +17,8 @@ export default function AboutMe() {
             <MyProfile
                 name="Sven Berger"
                 age={age}
-                mail="Schreib mir eine E-Mail"
-                phone={15119409788}
+                mail="bergersvenoliver@gmail.com"
+                phone="1511 9409788"
                 status="Praktikum beendet"
                 location="Idstein"
                 company="WolkenWerk GmbH"

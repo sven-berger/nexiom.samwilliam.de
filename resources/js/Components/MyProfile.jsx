@@ -18,7 +18,7 @@ export default function MyProfile({ name, age, mail, phone, status, location, co
                 <dt className="text-gray-500">E-Mail:</dt>
                 <dd className="font-medium text-gray-500 text-right">
                     <span>
-                        <a href={`mailto:${mail}`}>{mail}</a>
+                        <a href={`mailto:${mail}`}>Schreib mir eine Mail</a>
                     </span>
                 </dd>
                 <dt className="text-gray-500">Handynummer:</dt>
