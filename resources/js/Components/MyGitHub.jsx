@@ -82,7 +82,7 @@ export default function MyGitHub() {
                     ) {
                         setRateLimitHit(true);
                         throw new Error(
-                            'GitHub API Rate-Limit erreicht. Bitte spaeter erneut versuchen.',
+                            'GitHub API Rate-Limit erreicht... Bitte versuche es später erneut.',
                         );
                     }
 
