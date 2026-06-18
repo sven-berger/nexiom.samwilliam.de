@@ -29,7 +29,7 @@ export function GitHubCard({ repo }) {
 
     return (
         <div className="flex h-full flex-col">
-            <article className="rounded-t-2xl border border-slate-300 border-b-0 bg-white p-4 text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
+            <article className="h-full rounded-t-2xl border border-slate-300 border-b-0 bg-white p-4 text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
                 <h3 className="text-lg font-semibold">{repo.name}</h3>
 
                 <p className="mt-2 text-sm">
