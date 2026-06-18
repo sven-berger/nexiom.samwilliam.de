@@ -1,4 +1,5 @@
 import Box from '../Box';
+import Info from '../alerts/Info';
 
 const stats = [
     { label: 'Rolle', value: 'Junior Fullstack Entwickler' },
@@ -9,7 +10,7 @@ const stats = [
     { label: 'Stack', value: 'Laravel, React, Tailwind, SQL' },
 ];
 
-export default function Counter() {
+export default function AtAGlance() {
     return (
         <Box title="Auf einen Blick" grow>
             <ul className="space-y-2">
@@ -25,17 +26,16 @@ export default function Counter() {
                     </li>
                 ))}
             </ul>
-            <div className="mt-4 rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-3">
-                <p className="text-sm font-semibold text-emerald-700">
+
+            <Info>
+                <p className="flex justify-center">
                     Ich freue mich über Hinweise auf Junior-Positionen im Bereich Webentwicklung.
+                    Interessiert an einem Kennenlernen?
                 </p>
-                <a
-                    href="#kontakt"
-                    className="mt-2 inline-block text-sm font-medium text-emerald-800 underline underline-offset-2 hover:text-emerald-900"
-                >
-                    Interesse an einem Kennenlernen? Jetzt Kontakt aufnehmen
+                <a href="#kontakt" className="flex justify-center font-bold">
+                    Jetzt Kontakt aufnehmen
                 </a>
-            </div>
+            </Info>
         </Box>
     );
 }
