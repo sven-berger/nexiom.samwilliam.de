@@ -13,13 +13,3 @@ Route::get('/', function () {
         'apacheVersion' => $_SERVER['SERVER_SOFTWARE'] ?? null,
     ]);
 });
-
-Route::get('/dashboard/', function () {
-    return Inertia::render('Dashboard', [
-        'name' => 'Sven',   // wird als Prop an React übergeben
-    ]);
-});
-
-Route::get('/cv/', function () {
-    return Inertia::render('CV');
-});
