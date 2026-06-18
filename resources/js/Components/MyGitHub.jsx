@@ -2,8 +2,15 @@ import { useEffect, useState } from 'react';
 import GridLayout from './grid/GridLayout';
 import GitHubButton from './buttons/GitHubButton';
 import Info from './alerts/Info';
+import ContentTitle from './ContentTitle';
 
 export function GitHubCard({ repo }) {
+    const latestCommitMessage = repo.latestCommit?.message ?? 'Keine Commit-Daten verfuegbar.';
+    const latestCommitDate = repo.latestCommit?.date
+        ? new Date(repo.latestCommit.date).toLocaleDateString('de-DE')
+        : null;
+    const latestCommitUrl = repo.latestCommit?.url ?? null;
+
     return (
         <div className="flex h-full flex-col">
             <article className="rounded-t-2xl border border-slate-300 border-b-0 bg-white p-4 text-slate-700 transition-all duration-300 hover:-translate-y-1 hover:shadow-md">
@@ -16,6 +23,31 @@ export function GitHubCard({ repo }) {
                 <div className="mt-4 text-sm">
                     <p>Sprache: {repo.language ?? 'Nicht angegeben'}</p>
                     <p>Aktualisiert: {new Date(repo.updated_at).toLocaleDateString('de-DE')}</p>
+                </div>
+
+                <div className="pt-3 text-sm">
+                    <ContentTitle title="Letzter Commit" />
+                    {latestCommitUrl ? (
+                        <a
+                            href={latestCommitUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="mt-1 inline-block max-w-full truncate rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white hover:bg-green-700 hover:underline"
+                            title={latestCommitMessage}
+                        >
+                            {latestCommitMessage}
+                        </a>
+                    ) : (
+                        <p
+                            className="mt-1 inline-block max-w-full truncate rounded-full bg-green-600 px-3 py-1 text-xs font-semibold text-white"
+                            title={latestCommitMessage}
+                        >
+                            {latestCommitMessage}
+                        </p>
+                    )}
+                    {latestCommitDate && (
+                        <p className="text-slate-500 italic">am {latestCommitDate}</p>
+                    )}
                 </div>
             </article>
 
@@ -34,6 +66,7 @@ export default function MyGitHub() {
     const [repos, setRepos] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+    const [rateLimitHit, setRateLimitHit] = useState(false);
 
     useEffect(() => {
         async function fetchRepos() {
@@ -43,11 +76,59 @@ export default function MyGitHub() {
                 );
 
                 if (!response.ok) {
+                    if (
+                        response.status === 403 &&
+                        response.headers.get('x-ratelimit-remaining') === '0'
+                    ) {
+                        setRateLimitHit(true);
+                        throw new Error(
+                            'GitHub API Rate-Limit erreicht. Bitte spaeter erneut versuchen.',
+                        );
+                    }
+
                     throw new Error('GitHub-Daten konnten nicht geladen werden.');
                 }
 
                 const data = await response.json();
-                setRepos(data);
+
+                const reposWithCommits = await Promise.all(
+                    data.map(async (repo) => {
+                        try {
+                            const commitsResponse = await fetch(
+                                `https://api.github.com/repos/${repo.full_name}/commits?per_page=1`,
+                            );
+
+                            if (!commitsResponse.ok) {
+                                if (
+                                    commitsResponse.status === 403 &&
+                                    commitsResponse.headers.get('x-ratelimit-remaining') === '0'
+                                ) {
+                                    setRateLimitHit(true);
+                                }
+
+                                return { ...repo, latestCommit: null };
+                            }
+
+                            const commits = await commitsResponse.json();
+                            const latest = commits?.[0];
+
+                            return {
+                                ...repo,
+                                latestCommit: latest
+                                    ? {
+                                          message: latest.commit?.message,
+                                          date: latest.commit?.author?.date,
+                                          url: latest.html_url,
+                                      }
+                                    : null,
+                            };
+                        } catch {
+                            return { ...repo, latestCommit: null };
+                        }
+                    }),
+                );
+
+                setRepos(reposWithCommits);
             } catch (err) {
                 setError(err instanceof Error ? err.message : 'Unbekannter Fehler');
             } finally {
@@ -80,6 +161,15 @@ export default function MyGitHub() {
                     mit Lade- sowie Fehlerstatus dargestellt.
                 </a>
             </Info>
+
+            {rateLimitHit && (
+                <Info>
+                    <p className="text-sm font-medium text-amber-800">
+                        Hinweis: Das GitHub API Rate-Limit wurde erreicht. Commit-Daten sind
+                        eventuell unvollständig.
+                    </p>
+                </Info>
+            )}
 
             <GridLayout cols={3}>
                 {repos.map((repo) => (
