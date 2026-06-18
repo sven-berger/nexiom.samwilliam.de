@@ -175,7 +175,7 @@ export default function MyGitHub() {
             <Info>
                 <a
                     href="https://github.com/sven-berger/riftcore.de/blob/main/resources/js/Components/MyGitHub.jsx"
-                    className="mt-2 flex justify-center items-center text-sm font-medium text-emerald-800 hover:text-emerald-900 hover:underline"
+                    className="flex justify-center items-center text-sm font-medium text-emerald-800 hover:text-emerald-900 hover:underline"
                     target="_blank"
                     rel="noopener noreferrer"
                 >
