@@ -3,9 +3,8 @@ import { Link } from '@inertiajs/react';
 
 const links = [
     { href: '/', label: 'Startseite' },
-    { href: '#lebenslauf', label: 'Lebenslauf' },
-    { href: '#interessen', label: 'Interessen' },
-
+    { href: '#cv', label: 'Lebenslauf' },
+    { href: '#interests', label: 'Interessen' },
     { href: '#github', label: 'Meine GitHub-Projekte' },
 ];
 
