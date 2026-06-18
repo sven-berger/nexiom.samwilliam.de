@@ -69,11 +69,16 @@ export default function MyGitHub() {
     return (
         <>
             <Info>
-                <p className="mt-2 flex justify-center items-center text-sm font-medium text-emerald-800 hover:text-emerald-900">
+                <a
+                    href="https://github.com/sven-berger/riftcore.de/blob/main/resources/js/Components/MyGitHub.jsx"
+                    className="mt-2 flex justify-center items-center text-sm font-medium text-emerald-800 hover:text-emerald-900 hover:underline"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
                     Diese Übersicht lädt meine zuletzt aktualisierten öffentlichen Repositories über
                     die GitHub API. Die Daten werden asynchron abgefragt, im State gespeichert und
                     mit Lade- sowie Fehlerstatus dargestellt.
-                </p>
+                </a>
             </Info>
 
             <GridLayout cols={3}>
