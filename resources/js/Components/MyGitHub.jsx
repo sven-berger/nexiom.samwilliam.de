@@ -4,6 +4,22 @@ import GitHubButton from './buttons/GitHubButton';
 import Info from './alerts/Info';
 import ContentTitle from './ContentTitle';
 
+function getRateLimitResetText(headers) {
+    const resetHeader = headers.get('x-ratelimit-reset');
+
+    if (!resetHeader) {
+        return null;
+    }
+
+    const resetUnix = Number(resetHeader);
+
+    if (Number.isNaN(resetUnix)) {
+        return null;
+    }
+
+    return new Date(resetUnix * 1000).toLocaleString('de-DE');
+}
+
 export function GitHubCard({ repo }) {
     const latestCommitMessage = repo.latestCommit?.message ?? 'Keine Commit-Daten verfuegbar.';
     const latestCommitDate = repo.latestCommit?.date
@@ -67,6 +83,7 @@ export default function MyGitHub() {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     const [rateLimitHit, setRateLimitHit] = useState(false);
+    const [rateLimitResetAt, setRateLimitResetAt] = useState(null);
 
     useEffect(() => {
         async function fetchRepos() {
@@ -81,6 +98,7 @@ export default function MyGitHub() {
                         response.headers.get('x-ratelimit-remaining') === '0'
                     ) {
                         setRateLimitHit(true);
+                        setRateLimitResetAt(getRateLimitResetText(response.headers));
                         throw new Error(
                             'GitHub API Rate-Limit erreicht... Bitte versuche es später erneut.',
                         );
@@ -104,6 +122,9 @@ export default function MyGitHub() {
                                     commitsResponse.headers.get('x-ratelimit-remaining') === '0'
                                 ) {
                                     setRateLimitHit(true);
+                                    setRateLimitResetAt(
+                                        getRateLimitResetText(commitsResponse.headers),
+                                    );
                                 }
 
                                 return { ...repo, latestCommit: null };
@@ -167,6 +188,7 @@ export default function MyGitHub() {
                     <p className="text-sm font-medium text-amber-800">
                         Hinweis: Das GitHub API Rate-Limit wurde erreicht. Commit-Daten sind
                         eventuell unvollständig.
+                        {rateLimitResetAt && ` Zurücksetzung voraussichtlich: ${rateLimitResetAt}.`}
                     </p>
                 </Info>
             )}
