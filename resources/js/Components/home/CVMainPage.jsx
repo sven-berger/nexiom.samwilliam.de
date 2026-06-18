@@ -1,4 +1,3 @@
-import Button from '../Button';
 import Page from '../Page';
 import ContentTitle from '../ContentTitle';
 import CVAboutMe from '../cv/CVAboutMe';
@@ -26,12 +25,6 @@ export default function CVMainPage() {
             <section id="interessen" className="scroll-mt-24">
                 <Interests />
             </section>
-            <Button
-                className="mt-5"
-                to={'/cv/'}
-                variant="secondary"
-                label="Zum kompletten Lebenslauf"
-            />
         </>
     );
 }
