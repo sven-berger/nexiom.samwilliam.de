@@ -10,8 +10,9 @@ import ContentTitle from '../Components/ContentTitle';
 import ContactMe from '../Components/home/ContactMe';
 import MyKnowledge from '../Components/home/MyKnowledge';
 import CVMainPage from '../Components/home/CVMainPage';
-import Interests from '../Components/cv/Interests';
 import MyGitHub from '../Components/MyGitHub';
+import Imprint from '../Components/home/Imprint';
+import Privacy from '../Components/home/Privacy';
 
 export default function Home() {
     return (
@@ -31,24 +32,32 @@ export default function Home() {
                 />
                 <Button
                     label="Kontakt aufnehmen"
-                    to="#kontakt"
+                    to="#contact"
                     variant="secondary"
                     className="w-full"
                     target={false}
                 />
             </div>
-            <MyKnowledge />
-            <section id="lebenslauf" className="scroll-mt-24">
+            <section id="knowledge" className="scroll-mt-24">
+                <MyKnowledge />
+            </section>
+            <section id="cv" className="scroll-mt-24">
                 <CVMainPage />
             </section>
 
             <section id="github" className="scroll-mt-24">
-                <ContentTitle title="Meine GitHub-Projekte" />
                 <MyGitHub />
             </section>
 
-            <section id="kontakt" className="scroll-mt-24">
-                <ContentTitle title="Nimm Kontakt zu mir auf" />
+            <section id="imprint" className="scroll-mt-24">
+                <Imprint />
+            </section>
+
+            <section id="privacy" className="scroll-mt-24">
+                <Privacy />
+            </section>
+
+            <section id="contact" className="scroll-mt-24">
                 <ContactMe />
             </section>
         </Page>

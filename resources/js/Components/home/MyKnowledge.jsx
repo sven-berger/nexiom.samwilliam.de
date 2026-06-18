@@ -4,7 +4,7 @@ import Card from '../Cards';
 
 export default function MyKnowledge() {
     return (
-        <div id="kenntnisse" className="scroll-mt-24">
+        <>
             <ContentTitle title="Meine Kenntnisse" />
             <GridLayout cols={5}>
                 <Card
@@ -34,6 +34,6 @@ export default function MyKnowledge() {
                     link="/cv/"
                 />
             </GridLayout>
-        </div>
+        </>
     );
 }

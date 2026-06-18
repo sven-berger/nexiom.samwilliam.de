@@ -22,7 +22,7 @@ export default function CVMainPage() {
             <ContentTitle title="Ausbildung" />
             <FiAE />
             <MC />
-            <section id="interessen" className="scroll-mt-24">
+            <section id="interests" className="scroll-mt-24">
                 <Interests />
             </section>
         </>

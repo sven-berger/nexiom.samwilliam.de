@@ -1,3 +1,4 @@
+import { Link } from '@inertiajs/react';
 import { useState, useEffect } from 'react';
 
 export default function Footer() {
@@ -33,21 +34,18 @@ export default function Footer() {
 
                 <div className="flex items-center justify-center lg:justify-end mt-2 lg:mt-0">
                     <div className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 lg:justify-end">
-                        <a href="https://kyrex.de" className="hover:text-slate-700">
+                        <Link href="#imprint" className="hover:text-slate-700">
                             Impressum
-                        </a>{' '}
+                        </Link>{' '}
                         •
-                        <a href="https://kyrex.de/wissensportal" className="hover:text-slate-700">
+                        <Link href="#privacy" className="hover:text-slate-700">
                             Datenschutzerklärung
-                        </a>{' '}
+                        </Link>{' '}
                         •
-                        <a href="https://kyrex.de/dummy-page" className="hover:text-slate-700">
+                        <Link href="#contact" className="hover:text-slate-700">
                             Kontakt
-                        </a>{' '}
+                        </Link>{' '}
                         •
-                        <a href="https://kyrex.de" className="hover:text-slate-700">
-                            Nutzungsbedingungen
-                        </a>
                     </div>
                 </div>
             </div>
