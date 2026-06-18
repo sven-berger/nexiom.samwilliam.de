@@ -1,6 +1,6 @@
 import Box from '../../Box';
 import MyProfile from '../../MyProfile';
-import Button from '../../Button';
+import Button from '../../buttons/Button';
 
 export default function AboutMe() {
     const birthday = new Date(1991, 0, 21);

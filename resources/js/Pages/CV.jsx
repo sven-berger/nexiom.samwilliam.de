@@ -1,4 +1,4 @@
-import Button from '../Components/Button';
+import Button from '../Components/buttons/Button';
 import Page from '../Components/Page';
 import ContentTitle from '../Components/ContentTitle';
 import CVAboutMe from '../Components/cv/CVAboutMe';

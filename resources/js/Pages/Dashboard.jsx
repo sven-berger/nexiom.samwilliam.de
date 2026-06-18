@@ -1,5 +1,5 @@
 // Props kommen direkt von der Laravel-Route
-import Button from '../Components/Button';
+import Button from '../Components/buttons/Button';
 import Box from '../Components/Box';
 import GridLayout from '../Components/grid/GridLayout';
 import Page from '../Components/Page';

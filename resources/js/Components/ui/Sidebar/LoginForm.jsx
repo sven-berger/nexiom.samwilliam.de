@@ -1,5 +1,6 @@
 import Box from '../../Box';
-import Button from '../../Button';
+import Button from '../../buttons/Button';
+import GitHubButton from '../../buttons/GitHubButton';
 
 export default function LoginForm() {
     return (
@@ -51,20 +52,8 @@ export default function LoginForm() {
                             alt="Google Logo"
                             className="inline-block mr-2 h-5 w-5"
                         />
-                        Mit Google anmelden
                     </a>
-
-                    <a
-                        href="/auth/github"
-                        className="flex items-center justify-center w-full border border-gray-200 rounded-2xl bg-gray-100 p-3 text-center text-sm font-semibold text-black hover:bg-gray-200"
-                    >
-                        <img
-                            src="/images/thirdPartyLogin/github.png"
-                            alt="GitHub Logo"
-                            className="inline-block mr-2 h-5 w-5"
-                        />
-                        Mit GitHub anmelden
-                    </a>
+                    <GitHubButton variant="primary" link={'/auth/github'} />
                 </div>
             </form>
         </Box>
