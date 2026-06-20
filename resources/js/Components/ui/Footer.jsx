@@ -22,9 +22,7 @@ export default function Footer() {
         <footer className="text-slate-500 border border-slate-300 bg-white rounded-2xl p-4 mt-4 text-xs sm:text-sm">
             <div className="grid grid-cols-1 lg:grid-cols-3 lg:gap-2 items-center">
                 <div className="hidden lg:block">
-                    {weekday}, {time}
-                    <br />
-                    {date}
+                    {date} • {weekday}, {time}
                 </div>
 
                 <div className="text-center">
@@ -45,7 +43,6 @@ export default function Footer() {
                         <Link href="#contact" className="hover:text-slate-700">
                             Kontakt
                         </Link>{' '}
-                        •
                     </div>
                 </div>
             </div>
