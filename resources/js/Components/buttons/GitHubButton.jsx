@@ -8,7 +8,7 @@ export default function GitHubButton({
     className = '',
 }) {
     const variants = {
-        primary: 'bg-white hover:bg-gray-50',
+        primary: 'bg-gray-100 hover:bg-gray-200',
         secondary: 'bg-gray-500 hover:bg-gray-600 text-white',
     };
 
@@ -26,7 +26,7 @@ export default function GitHubButton({
             href={href}
             target={linkTarget}
             rel={linkRel}
-            className={`flex items-center justify-center w-full border border-gray-200 p-3 text-center text-sm font-semibold ${variants[variant]} ${className}`}
+            className={`flex items-center justify-center w-full border border-gray-200 rounded-2xl p-3 text-center text-sm font-semibold ${variants[variant]} ${className}`}
         >
             <img src={imageSrc} alt="GitHub Logo" className="inline-block mr-2 h-5 w-5" />
             {text}
