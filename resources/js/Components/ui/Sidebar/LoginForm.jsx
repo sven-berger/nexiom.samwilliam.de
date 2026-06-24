@@ -1,6 +1,7 @@
 import Box from '../../Box';
 import Button from '../../buttons/Button';
 import GitHubButton from '../../buttons/GitHubButton';
+import GoogleButton from '../../buttons/GoogleButton';
 
 export default function LoginForm() {
     return (
@@ -43,16 +44,8 @@ export default function LoginForm() {
                         variant="secondary"
                         className="w-full text-sm"
                     />
-                    <a
-                        href="/auth/google"
-                        className="flex items-center justify-center w-full border border-gray-200 rounded-2xl bg-gray-100 p-3 text-center text-sm font-semibold text-black hover:bg-gray-200"
-                    >
-                        <img
-                            src="/images/thirdPartyLogin/google.png"
-                            alt="Google Logo"
-                            className="inline-block mr-2 h-5 w-5"
-                        />
-                    </a>
+
+                    <GoogleButton variant="primary" link={'/auth/google'} />
                     <GitHubButton variant="primary" link={'/auth/github'} />
                 </div>
             </form>
