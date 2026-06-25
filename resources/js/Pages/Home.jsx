@@ -16,7 +16,7 @@ import Privacy from '../Components/home/Privacy';
 
 export default function Home() {
     return (
-        <Page title="Startseite">
+        <Page title="RiftCore.de - Sven Berger">
             <GridLayout>
                 <ThatsMeImage />
                 <GridColumn>
