@@ -6,6 +6,9 @@ const links = [
     { href: '#cv', label: 'Lebenslauf' },
     { href: '#interests', label: 'Interessen' },
     { href: '#github', label: 'Meine GitHub-Projekte' },
+    { href: '#imprint', label: 'Impressum' },
+    { href: '#privacy', label: 'Datenschutzerklärung' },
+    { href: '#contact', label: 'Kontakt' },
 ];
 
 export default function Nav() {

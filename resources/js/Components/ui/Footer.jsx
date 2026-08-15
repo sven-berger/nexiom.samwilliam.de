@@ -30,7 +30,7 @@ export default function Footer() {
                     <p>Diese Seite wurde mit ganz viel ❤️, 🎧 und 🍔 erstellt.</p>
                 </div>
 
-                <div className="flex items-center justify-center lg:justify-end mt-2 lg:mt-0">
+                {/* <div className="flex items-center justify-center lg:justify-end mt-2 lg:mt-0">
                     <div className="inline-flex flex-wrap items-center justify-center gap-x-3 gap-y-1 lg:justify-end">
                         <Link href="#imprint" className="hover:text-slate-700">
                             Impressum
@@ -44,7 +44,7 @@ export default function Footer() {
                             Kontakt
                         </Link>{' '}
                     </div>
-                </div>
+                </div> */}
             </div>
         </footer>
     );
