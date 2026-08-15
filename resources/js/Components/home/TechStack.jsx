@@ -20,7 +20,7 @@ export default function TechStack() {
                 )}
                 {mysqlVersion && (
                     <li className="flex justify-between">
-                        <span className="font-medium text-slate-800">MySQL</span>
+                        <span className="font-medium text-slate-800">Datenbank</span>
                         <span className="text-slate-500 text-sm">{mysqlVersion}</span>
                     </li>
                 )}
