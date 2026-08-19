@@ -35,14 +35,14 @@ export default function HoverAboutMe() {
 
                     <div className="mt-6 flex flex-wrap gap-3">
                         <a
-                            href="/cv/"
+                            href="#cv"
                             className="rounded-full bg-white px-5 py-2 text-sm font-semibold text-slate-900 transition hover:bg-white/90"
                         >
                             Lebenslauf ansehen
                         </a>
 
                         <a
-                            href="/projects/"
+                            href="#projects"
                             className="rounded-full bg-white/10 px-5 py-2 text-sm font-semibold text-white ring-1 ring-white/30 transition hover:bg-white/20"
                         >
                             Projekte ansehen
