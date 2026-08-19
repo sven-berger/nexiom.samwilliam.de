@@ -50,14 +50,7 @@ export default function Privacy() {
                     erfolgt durch mich nicht.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-5 mb-3">3. Kontaktaufnahme per E-Mail</h3>
-                <p>
-                    Wenn Sie mich per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten
-                    ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an
-                    Dritte erfolgt nicht, sofern keine gesetzliche Pflicht hierzu besteht.
-                </p>
-
-                <h3 className="text-lg font-semibold mt-5 mb-3">4. Einbindung der GitHub API</h3>
+                <h3 className="text-lg font-semibold mt-5 mb-3">3. Einbindung der GitHub API</h3>
                 <p>
                     Auf dieser Website werden öffentlich verfügbare Informationen aus meinem
                     GitHub-Profil über die GitHub API eingebunden, zum Beispiel Repository-Namen,
@@ -72,7 +65,7 @@ export default function Privacy() {
                     Datenschutzerklärung von GitHub.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-5 mb-3">5. Einbindung einer Wetter-API</h3>
+                <h3 className="text-lg font-semibold mt-5 mb-3">4. Einbindung einer Wetter-API</h3>
                 <p>
                     Auf dieser Website wird eine kleine Wetteranzeige für den Bereich 65510
                     eingebunden. Hierfür werden aktuelle Wetterdaten über eine externe Wetter-API
@@ -87,7 +80,7 @@ export default function Privacy() {
                 </p>
 
                 <h3 className="text-lg font-semibold mt-5 mb-3">
-                    6. Cookies, Tracking und Analyse-Tools
+                    5. Cookies, Tracking und Analyse-Tools
                 </h3>
                 <p>
                     Diese Website verwendet aktuell keine Tracking-Tools wie Google Analytics,
@@ -101,7 +94,7 @@ export default function Privacy() {
                     Datenschutzerklärung wird in diesem Fall entsprechend angepasst.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-5 mb-3">7. Eingesetzte Technologien</h3>
+                <h3 className="text-lg font-semibold mt-5 mb-3">6. Eingesetzte Technologien</h3>
                 <p>
                     Diese Website kann lokal eingebundene Bibliotheken und Frameworks verwenden, zum
                     Beispiel React, Laravel, Tailwind CSS oder vergleichbare
@@ -109,7 +102,7 @@ export default function Privacy() {
                     kein zusätzlicher Datenaustausch mit Drittanbietern statt.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-5 mb-3">8. Rechte betroffener Personen</h3>
+                <h3 className="text-lg font-semibold mt-5 mb-3">7. Rechte betroffener Personen</h3>
                 <p>
                     Betroffene Personen haben nach Maßgabe der gesetzlichen Vorschriften das Recht
                     auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung,
@@ -119,7 +112,14 @@ export default function Privacy() {
                     E-Mail-Adresse wenden.
                 </p>
 
-                <h3 className="text-lg font-semibold mt-5 mb-3">9. Stand</h3>
+                {/* <h3 className="text-lg font-semibold mt-5 mb-3">8. Kontaktaufnahme per E-Mail</h3>
+                <p>
+                    Wenn Sie mich per E-Mail kontaktieren, werden die von Ihnen übermittelten Daten
+                    ausschließlich zur Bearbeitung Ihrer Anfrage verwendet. Eine Weitergabe an
+                    Dritte erfolgt nicht, sofern keine gesetzliche Pflicht hierzu besteht.
+                </p> */}
+
+                <h3 className="text-lg font-semibold mt-5 mb-3">8. Stand</h3>
                 <p>Stand: 18.06.2026</p>
             </Box>
         </>
